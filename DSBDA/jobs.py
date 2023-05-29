@@ -1,4 +1,5 @@
 def printJobScheduling(arr, t):
+    profit=0
     n = len(arr)
     for i in range(n):
         for j in range(n - 1 - i):
@@ -11,8 +12,10 @@ def printJobScheduling(arr, t):
             if result[j] is False:
                 result[j] = True
                 job[j] = arr[i][0]
+                profit+=arr[i][2]
                 break
     print(job)
+    print("Max profit using greedy algorithm is : ",profit)
 if __name__ == '__main__':
     arr = [['a', 2, 30],
         ['b', 1, 9],
